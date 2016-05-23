@@ -66,8 +66,8 @@
         <tr><td colspan={{processedColumns.length}} class="{{classes.noDataCell}}">{{{messages.allColumnsAreHidden}}}</td></tr>
       {{else}}
         {{#if visibleContent.length}}
-          {{#each visibleContent as |record|}}
-            {{partial rowTemplate}}
+          {{#each visibleContent as |record index|}}
+            {{yield record}}
           {{/each}}
         {{else}}
           <tr><td colspan={{processedColumns.length}}>{{{messages.noDataToShow}}}</td></tr>
