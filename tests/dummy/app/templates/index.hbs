@@ -291,7 +291,9 @@
             <h4>{{example12.title}}</h4>
         </div>
         <div class="col-md-8">
-            {{models-table data=example12.content columns=example12.columns filteringIgnoreCase=true}}
+            {{#models-table data=example12.content columns=example12.columns filteringIgnoreCase=true as |row|}}
+              <tr><td>{{row.id}}</td></tr>
+            {{/models-table}}
         </div>
         <div class="col-md-4">
             <p>Component usage:</p>
